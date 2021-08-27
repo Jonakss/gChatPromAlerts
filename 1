@@ -1,7 +1,6 @@
-const express = require('express');
-const app = express();
-app.use(express.json());
-const port = 3333;
+const express = require('express')
+const app = express()
+const port = 3000
 const fetch = require('node-fetch');
 const gchat = require('@googleapis/chat');
 const { google } = require('googleapis');
@@ -80,7 +79,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req, res) => {
-	console.log(req.body);
+	console.log(req);
   res.send('Hello World!')
 })
 app.listen(port, () => {
