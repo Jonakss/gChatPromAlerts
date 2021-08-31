@@ -1,6 +1,13 @@
+const dotenv = require("dotenv").config();
+
+if (dotenv.error) {
+  throw result.error;
+  return -1;
+};
+
 const express = require('express');
 const app = express();
-const port = 3333;
+const port = process.env.APP_PORT;
 
 function postMessage(count) {
   return new Promise(function(resolve, reject) {
@@ -57,10 +64,7 @@ const res = await gchat.spaces.messages.update({
   attachment: [],
   createTime: '2021-08-30T21:41:33.409503Z',
   lastUpdateTime: '2021-08-30T21:41:33.409503Z'
-}
-
-
-,
+},
 });
 console.log(res.data);
 }
