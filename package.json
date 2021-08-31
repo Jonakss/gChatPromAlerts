@@ -4,7 +4,8 @@
   "description": "Alertmanager proxy to notify in Google Chat ",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "nodemon src/index.js",
+    "pretest": "eslint --ignore-path .gitignore .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -22,9 +23,10 @@
     "@googleapis/chat": "^0.2.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "googleapis": "^84.0.0",
+    "googleapis": "^84.0.0"
   },
   "devDependencies": {
-    "eslint": "^7.32.0"
+    "eslint": "^7.32.0",
+    "nodemon": "^2.0.12"
   }
 }

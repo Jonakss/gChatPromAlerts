@@ -1,11 +1,10 @@
 const dotenv = require("dotenv").config();
 
 if (dotenv.error) {
-  throw result.error;
-  return -1;
-};
+  throw dotenv.error;
+}
 
-const express = require('express');
+const express = require("express");
 const app = express();
 const port = process.env.APP_PORT;
 
@@ -14,5 +13,5 @@ app.get("/", (req,res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+  console.log(`Example app listening at http://localhost:${port}`);
+});
