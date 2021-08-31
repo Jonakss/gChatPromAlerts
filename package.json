@@ -2,8 +2,9 @@
   "name": "gchatpromalerts",
   "version": "0.0.1",
   "description": "Alertmanager proxy to notify in Google Chat ",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -19,13 +20,9 @@
   "license": "ISC",
   "dependencies": {
     "@googleapis/chat": "^0.2.1",
-    "dot-env": "^0.0.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "fetch": "^1.1.0",
     "googleapis": "^84.0.0",
-    "node-fetch": "^2.6.1",
-    "unirest": "^0.6.0"
   },
   "devDependencies": {
     "eslint": "^7.32.0"
