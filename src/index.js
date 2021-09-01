@@ -5,6 +5,8 @@ if (dotenv.error) {
 }
 
 const express = require("express");
+const { format } = require("winston");
+const logger = require("./helpers/logger");
 const app = express();
 const port = process.env.APP_PORT;
 
@@ -13,5 +15,5 @@ app.get("/", (req,res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  logger.log("info", `Example app listening at http://localhost:${port}`);
 });
