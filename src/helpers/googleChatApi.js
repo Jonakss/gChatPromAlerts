@@ -10,7 +10,7 @@ const _auth = new google.auth.GoogleAuth({
 function postMessage(count) {
     return new Promise(function(resolve, reject) {
         getJWT().then(function(token) {
-            unirest.post('https://chat.googleapis.com/v1/spaces/AAAASGYz1ug/messages/')
+            unirest.post('https://chat.googleapis.com/v1/spaces/#####/messages/')
                 .headers({
                     "Content-Type": "application/json",
                     "Authorization": "Bearer " + token,
@@ -35,35 +35,8 @@ function postMessage(count) {
   const res = await gchat.spaces.messages.update({
       name: `spaces/${space}/messages/${thread}.${message}`,
       updateMask: 'text',
-      requestBody:
-  {
-    name: 'spaces/AAAASGYz1ug/messages/aI8OgTxkkaw.t8ZrL56MNgI',
-    sender: {
-      name: 'users/114225854861621630799',
-      displayName: 'Jonathan Correa Paiva',
-      domainId: '38nkw5d',
-      type: 'HUMAN',
-      isAnonymous: false
-    },
-    text: 'Prueba',
-    cards: [],
-    previewText: '',
-    annotations: [],
-    thread: { name: 'spaces/AAAASGYz1ug/threads/aI8OgTxkkaw' },
-    space: {
-      name: 'spaces/AAAASGYz1ug',
-      type: 'ROOM',
-      singleUserBotDm: false,
-      threaded: true,
-      displayName: 'Pruebas alertas'
-    },
-    fallbackText: '',
-    argumentText: 'Prueba cambiada',
-    attachment: [],
-    createTime: '2021-08-30T21:41:33.409503Z',
-    lastUpdateTime: '2021-08-30T21:41:33.409503Z'
-  },
-  });
+      requestBody:{}
+  );
   console.log(res.data);
   }
   
@@ -99,33 +72,8 @@ function postMessage(count) {
     });
   }
   
-  const webhookURL = 'https://chat.googleapis.com/v1/spaces/AAAAaTQ2dEU/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=LKZL7-70E66a2JRzNWxdIIjn8ZMsK43tg7R3xgzlMTA%3D';
-  const apiURL = 'https://chat.googleapis.com/v1/spaces/AAAAaTQ2dEU/messages';
-  
-  // function postMessage(count) {
-  //   return new Promise(function(resolve, reject) {
-  //       getJWT().then(function(token) {
-  //           unirest.post('https://chat.googleapis.com/v1/spaces/AAAASGYz1ug/messages/')
-  //               .headers({
-  //                   "Content-Type": "application/json",
-  //                   "Authorization": "Bearer " + token
-  //               })
-  //               .send(JSON.stringify({
-  //                   'text': 'Hello! This is message number ' + count,
-  //               }))
-  //               .end(function(res) {
-  // 		      console.log(res);
-  //                   resolve();
-  //               });
-  //       }).catch(function(err) {
-  //           reject(err);
-  //       });
-  //   });
-  // }
-  
-  // const webhookURL = 'https://chat.googleapis.com/v1/spaces/AAAAaTQ2dEU/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=LKZL7-70E66a2JRzNWxdIIjn8ZMsK43tg7R3xgzlMTA%3D';
-  // const apiURL = 'https://chat.googleapis.com/v1/spaces/AAAAaTQ2dEU/messages';
-  
+  const webhookURL = '';
+  const apiURL = '';
   app.post('/', (req, res) => {
       console.log(req.body);
     res.send('Hello World!')
