@@ -9,7 +9,7 @@ Google Chat BOT made in Node.js, for sending notificaions to Rooms and dm's.
 
 ## Data Structure
 
-Spaces
+### Spaces
     - ID
     - type (dm, room w/threads, room wo/threads) 
     - enabled (Added to a space)
