@@ -13,14 +13,14 @@ const port = process.env.APP_PORT;
 
 const router = require("./routes");
 
-
 app.use(helmet());
+
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jade');
 
 app.use("/bot", router.bot);
 
-app.get("/", (req,res) => {
-  res.send("Express app");
-});
+app.use("/", router.webgui);
 
 app.listen(port, () => {
   logger.log("info", `gChatPromAlert listening in port: ${port}`);
