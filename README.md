@@ -16,5 +16,5 @@ Google Chat BOT made in Node.js, for sending notificaions to Rooms and dm's.
     - threads[]
       - fingerprints[]
 
-onAddToSpace -> Creates a new space if not exist and enables it
-onRemoveFromSpace -> enabled to false, space it's avaiable but not usable
+* `onAddToSpace -> Creates a new space if not exist and enables it`
+* `onRemoveFromSpace -> enabled to false, space it's avaiable but not usable`
