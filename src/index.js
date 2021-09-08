@@ -18,9 +18,9 @@ app.use(helmet());
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 
-app.use("/bot", router.bot);
-
 app.use("/", router.webgui);
+app.use("/bot", router.bot);
+app.use("/hook", router.hook);
 
 app.listen(port, () => {
   logger.log("info", `gChatPromAlert listening in port: ${port}`);
