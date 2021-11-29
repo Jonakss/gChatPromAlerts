@@ -1,6 +1,6 @@
 # gChatPromAlerts
 
-Google Chat BOT made in Node.js, for sending notificaions to Rooms and dm's.
+Google Chat BOT made in Node.js, for sending notifications to Rooms and dm's.
 
 
 ## Using Google Service Account Credentials
