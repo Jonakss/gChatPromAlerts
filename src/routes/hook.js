@@ -30,10 +30,10 @@ router.post('/', function (req, res) {
     if (req.body.alerts.length >= 0){
         req.body.alerts.map((a, i)=>{
             logger.info(`Alert ${i}: `, a.fingerprint);
-            addFingerprint(a.fingerprint, "Thread id")
+            addFingerprint(a.fingerprint, "Thread id");
+            logger.info(getThread(a.fingerprint));
         })
     };
-    if (fingerprints != undefined || Object.keys(fingerprints).length >= 0) fingerprints.map(f => console.log(f));
     res.send('Hook post');
 })
 
