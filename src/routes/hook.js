@@ -29,8 +29,8 @@ router.post('/', function (req, res) {
     logger.info("Alert conts", req.body.alerts.length);
     if (req.body.alerts.length >= 0){
         req.body.alerts.map((a, i)=>{
-            logger.info(`Alert ${i}: `, a.fingerprint);
-            addFingerprint(a.fingerprint, "Thread id");
+            logger.info(`Alert ${i}: ${a.fingerprint}`);
+            addFingerprint(a.fingerprint, `Thread id - ${a.fingerprint}`);
             logger.info(getThread(a.fingerprint));
         })
     };
