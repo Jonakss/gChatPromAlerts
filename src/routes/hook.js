@@ -7,7 +7,7 @@ function addFingerprint(fingerprintId, thread){
 }
 
 function getThread(fingerprintId){
-    if (fingerprints_ === undefined || Object.keys(fingerprints).length === 0) return undefined;
+    if (fingerprints === undefined || Object.keys(fingerprints).length === 0) return undefined;
     return fingerprints[fingerprintId];
 };
 
@@ -33,7 +33,7 @@ router.post('/', function (req, res) {
             addFingerprint(a.fingerprint, "Thread id")
         })
     };
-    if (fingerprints_ !== undefined || Object.keys(fingerprints).length >= 0) fingerprints.map(f => console.log(f));
+    if (fingerprints != undefined || Object.keys(fingerprints).length >= 0) fingerprints.map(f => console.log(f));
     res.send('Hook post');
 })
 
