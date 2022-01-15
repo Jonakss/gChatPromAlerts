@@ -1,4 +1,5 @@
 // hook.js - Route that handles AlertManager calls
+var gchat = require('../helpers/googleChatApi');
 
 var fingerprints = []; // fingerprints[fingerprintId]
 
@@ -24,16 +25,18 @@ router.get('/', function (req, res) {
 
 // About page route.
 router.post('/', function (req, res) {
-    logger.info("HOOK")
-    logger.info("Body", req.body[0]);
-    logger.info("Alert conts", req.body.alerts.length);
-    if (req.body.alerts.length >= 0){
-        req.body.alerts.map((a, i)=>{
-            logger.info(`Alert ${i}: ${a.fingerprint}`);
-            addFingerprint(a.fingerprint, `Thread id - ${a.fingerprint}`);
-            logger.info(getThread(a.fingerprint));
-        })
-    };
+    //logger.debug("Body", req.body);
+    if(req.body.alerts){
+        logger.debug(`There are ${req.body.alerts.length} alerts.`);
+        if (req.body.alerts.length >= 0){
+            req.body.alerts.map((a, i)=>{
+                logger.info(`Alert ${i}: ${a.fingerprint} - ${a.labels.alertname} (${a.status}) [${a.labels.severity}] on ${a.labels.instance}`);
+                if(getThread(a.fingerprint) === undefined) addFingerprint(a.fingerprint, `${a.startsAt}`);
+                logger.info(getThread(a.fingerprint));
+            })
+        };
+        if(fingerprints) logger.info(fingerprints.map((f, i) => {logger.info(`${f} : ${fingerprints[i]}`)}));
+    }
     res.send('Hook post');
 })
 
