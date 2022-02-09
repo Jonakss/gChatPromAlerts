@@ -1,0 +1,31 @@
+{"receiver":"web\\.hook\\.develop",
+"status":"firing",
+"alerts":[{
+    "status":"firing",
+    "labels":{
+        "alertname":"InstanceDown",
+        "env":"Testing",
+        "instance":"docker-testing:9100",
+        "job":"Hosts",
+        "severity":"critical"},
+        "annotations":{"description":"docker-testing:9100 of job Hosts has been down for more than 3 minutes.",
+        "summary":"Host instance docker-testing:9100 is down"
+    },
+    "startsAt":"2022-01-15T18:39:02.072Z",
+    "endsAt":"0001-01-01T00:00:00Z",
+    "generatorURL":"http://10.190.2.50/prometheus/graph?g0.expr=up%7Bjob%3D%22Hosts%22%7D+%3D%3D+0&g0.tab=1",
+    "fingerprint":"cf9f00cb92b3f90a"
+}],
+"groupLabels":{"alertname":"InstanceDown"},
+"commonLabels":{"alertname":"InstanceDown",
+"env":"Testing",
+"instance":"docker-testing:9100",
+"job":"Hosts",
+"severity":"critical"},
+"commonAnnotations":{"description":"docker-testing:9100 of job Hosts has been down for more than 3 minutes.",
+"summary":"Host instance docker-testing:9100 is down"},
+"externalURL":"http://docker-monitor:9093",
+"version":"4",
+"groupKey":"{}/{env=~\"Testing\"}:{alertname=\"InstanceDown\"}",
+"truncatedAlerts":0,
+"timestamp":"2022-01-15T18:39:32.127Z"}
