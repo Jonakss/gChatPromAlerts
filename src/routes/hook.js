@@ -11,6 +11,8 @@ function getThread(fingerprintId){
     return fingerprints[fingerprintId];
 };
 
+async function sendAlert(space, thread, alert){};
+
 var express = require('express');
 const logger = require('../helpers/logger');
 var router = express.Router();

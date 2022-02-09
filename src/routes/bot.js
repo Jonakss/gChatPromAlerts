@@ -14,7 +14,7 @@ router.get('/about', function (req, res) {
 })
 
 /// From Google Chat ///
-var fireEvent = (event) => {
+var fireEvent = (event, body) => {
     // ON_ADDED_TO_SPACE
     onAddedToSpace = (body) => {
         console.log("onAddedToSpace");
@@ -49,16 +49,17 @@ var fireEvent = (event) => {
         MESSAGE: onMessage
     };
 
-    return event? events[event]() : notAEvent();
+    return event? events[event](body) : notAEvent();
 };
 
 
 router.post("/", (req, res) => {
-    getEvent(req.body.type);
+    var a = fireEvent(req.body.type, req.para.body);
+    res.send(a);
 });
 
 router.get("/test/:type", (req, res) => {
-    var a = fireEvent(req.params.type);
+    var a = fireEvent(req.params.type, req.body);
     res.send(a);
 });
 
