@@ -40,6 +40,11 @@ router.post('/', function (req, res) {
         if(fingerprints) logger.info(fingerprints.map((f, i) => {logger.info(`${f} : ${fingerprints[i]}`)}));
     }
     res.send('Hook post');
-})
+});
+
+router.get('/test/:space/:thread', function(req,res){
+    const res = await gchat.newMessage(req.params.thread, req.params.thread, "Test");
+    res.send(res);
+});
 
 module.exports = router;
